@@ -30,6 +30,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour // where T
 
     private void OnDisable()
     {
-        IsDestroyed = true;
+        // IsDestroyed = true;
     }
 }

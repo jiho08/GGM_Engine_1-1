@@ -11,7 +11,7 @@ public class InputReader : ScriptableObject, IPlayerActions
 {
     private Controls _controls;
 
-    public event Action DashKeyEvent;
+    public event Action JumpKeyEvent;
     public event Action<bool> OnFireKeyEvent;
     public event Action ReloadKeyEvent;
 
@@ -35,11 +35,11 @@ public class InputReader : ScriptableObject, IPlayerActions
         Movement = context.ReadValue<Vector2>();
     }
 
-    public void OnDash(InputAction.CallbackContext context)
+    public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            DashKeyEvent?.Invoke();
+            JumpKeyEvent?.Invoke();
         }
     }
 

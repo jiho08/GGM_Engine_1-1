@@ -5,8 +5,16 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    private void Update()
-    {
+    /* [field: SerializeField] public GameObject Player { get; set; }
+    public static GameManager Instance;
 
-    }
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(this);
+    } */
 }

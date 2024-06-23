@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Enemy
   - Projectile
   - DeadBody
-  - 
+  - Map
   - 
   - 
   - 
@@ -41,11 +42,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Agent
-    uniqueID: 1839161221
+  - name: Wall
+    uniqueID: 1126087841
     locked: 0
   - name: VFX
     uniqueID: 491075241
+    locked: 0
+  - name: Obstacle
+    uniqueID: 2446587067
+    locked: 0
+  - name: Agent
+    uniqueID: 1839161221
     locked: 0
   - name: UI
     uniqueID: 714202735

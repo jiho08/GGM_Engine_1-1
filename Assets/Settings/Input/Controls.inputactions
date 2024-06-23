@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Dash",
+                    "name": "Jump",
                     "type": "Button",
                     "id": "09162ae4-1eb8-4691-9b9f-7778de32ce16",
                     "expectedControlType": "Button",
@@ -53,7 +53,7 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
+                    "name": "AD",
                     "id": "69f9d6d9-f690-409c-ac2a-d58c6327e448",
                     "path": "2DVector",
                     "interactions": "",
@@ -62,28 +62,6 @@
                     "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "d62fe9e4-47cd-4322-9caf-cbf29e4f346d",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyMouse",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "5d092650-ef16-4c94-a720-55d561cc7311",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyMouse",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -114,7 +92,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyMouse",
-                    "action": "Dash",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
