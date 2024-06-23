@@ -13,7 +13,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Jumping"))
         {
             // UI 띄우기, 화면 연출 등
             _topGoalUI.DOAnchorPosX(_moveX, _moveTime).SetEase(Ease.OutBack);
@@ -21,7 +21,14 @@ public class Goal : MonoBehaviour
             PlayerMovement.Instance.canMove = false;
             PlayerMovement.Instance.canJump = false;
             PlayerMovement.Instance.RbCompo.velocity = Vector3.zero;
-            // Time.timeScale = 0f;
+
+            StartCoroutine(TimeStopDelayCoroutine());
         }
+    }
+
+    private IEnumerator TimeStopDelayCoroutine()
+    {
+        yield return new WaitForSeconds(_moveTime);
+        Time.timeScale = 0f;
     }
 }

@@ -244,16 +244,21 @@ MonoBehaviour:
   _moveSpeedSet: 8
   _turnSpeed: 55
   _jumpTime: 0.25
-  _jumpPower: 2
+  _jumpPower: 3
   _jumpCooltimeSet: 0.8
+  _jumpLayerDelay: 0.25
   _knockbackTime: 0.2
-  _directionTrm: {fileID: 8810268610427326076}
+  directionTrm: {fileID: 0}
   _startText: {fileID: 0}
+  _playerAnimator: {fileID: 0}
+  _timerText: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: c485571a03d44a44d842d85172831fee, type: 2}
   canMove: 1
   canJump: 1
   isStart: 0
   isDead: 0
+  ready: 1
   JumpEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -270,10 +275,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
-  _healthFills: {fileID: 0}
   _deadMark: {fileID: 1527855674034794816, guid: 73aad83e07057d94fb433fe5c9fa7031, type: 3}
   _healthUI: {fileID: 0}
-  _timerUI: {fileID: 0}
+  _startPlace: {fileID: 0}
+  timerUI: {fileID: 0}
   hp: 100
   OnCollisonEvent:
     m_PersistentCalls:
@@ -290,7 +295,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  health: {fileID: 0}
+  _health: {fileID: 0}
+  _timer: {fileID: 0}
 --- !u!1 &6532351472001806489
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deadUI: {fileID: 0}
   _virtualCamera: {fileID: 0}
+  _player: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1 &8215993378287687248
 GameObject:
   m_ObjectHideFlags: 0

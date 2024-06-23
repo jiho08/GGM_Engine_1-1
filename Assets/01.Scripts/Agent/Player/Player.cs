@@ -21,6 +21,7 @@ public class Player : MonoSingleton<Player>
 
     [SerializeField] private Health _health;
     [SerializeField] private Timer _timer;
+    [SerializeField] private Timer _timer2;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,7 +30,6 @@ public class Player : MonoSingleton<Player>
             OnCollisonEvent?.Invoke();
 
             OnHit();
-            Debug.Log(hp);
         }
     }
 
@@ -92,5 +92,6 @@ public class Player : MonoSingleton<Player>
         timerUI.transform.GetChild(1).GetComponent<Image>().enabled = true;
         timerUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().enabled = true;
         _timer.RestartTimer();
+        _timer2.RestartTimer();
     }
 }

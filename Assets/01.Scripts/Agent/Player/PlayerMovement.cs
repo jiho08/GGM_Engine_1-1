@@ -15,8 +15,9 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
     [SerializeField] private float _jumpTime = 0.3f;
     [SerializeField] private float _jumpPower = 1f;
     [SerializeField] private float _jumpCooltimeSet = 0.7f;
+    [SerializeField] private float _jumpLayerDelay = 0.1f;
     [SerializeField] private float _knockbackTime = 0.2f;
-    [SerializeField] private Transform _directionTrm;
+    [SerializeField] private Transform directionTrm;
     [SerializeField] private GameObject _startText;
     [SerializeField] private PlayerAnimator _playerAnimator;
     [SerializeField] private TextMeshProUGUI _timerText;
@@ -43,10 +44,15 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
 
     private readonly int _isDeadHash = Animator.StringToHash("IsDead");
 
+    private int _jumpingLayer;
+    private int _playerLayer;
+
     public void Initialize()
     {
         RbCompo = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _jumpingLayer = LayerMask.NameToLayer("Jumping");
+        _playerLayer = LayerMask.NameToLayer("Player");
     }
 
     private void Awake()
@@ -71,7 +77,7 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
 
     private void FixedUpdate()
     {
-        ApplyMovement(_directionTrm, transform, _moveSpeed);
+        ApplyMovement(directionTrm, transform, _moveSpeed);
         CarRotation();
         JumpCooltime();
     }
@@ -152,6 +158,8 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
         if (!canMove || !canJump)
             return;
 
+        gameObject.tag = "Jumping";
+        gameObject.layer = _jumpingLayer;
 
         JumpEvent?.Invoke();
         StartCoroutine(JumpCoroutine());
@@ -170,6 +178,11 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
         yield return new WaitForSeconds(_jumpTime);
 
         _moveSpeed = _moveSpeedSet;
+
+        yield return new WaitForSeconds(_jumpLayerDelay);
+
+        gameObject.tag = "Player";
+        gameObject.layer = _playerLayer;
     }
 
     #endregion
