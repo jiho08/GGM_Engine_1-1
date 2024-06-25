@@ -90,7 +90,7 @@ public class TitleButtonManager : MonoBehaviour
             _backButton.transform.position = Vector3.Slerp(_backButton.transform.position, _backTarget.transform.position, 0.05f);
 
             // 뒤로가기 버튼을 눌렀을 때 메인 타이틀 UI들이 화면으로 이동함
-            _mainTitleTarget.transform.position = new Vector3(-3, 2.5f, 10);
+            _mainTitleTarget.transform.position = new Vector3(-2, 2.5f, 10);
             _startTarget.transform.position = new Vector3(-1, 0, 10);
             _settingTarget.transform.position = new Vector3(2, -2, 10);
             _quitTarget.transform.position = new Vector3(5, -4, 10);
@@ -151,14 +151,12 @@ public class TitleButtonManager : MonoBehaviour
 
     public void GameStart()
     {
-        Debug.Log("시작 버튼을 누름");
         // AudioManager.Instance.PlaySfx(AudioManager.Sfx.Btn);
         SceneManager.LoadScene(1);
     }
 
     public void Setting()
     {
-        Debug.Log("설정 버튼을 누름");
         // AudioManager.Instance.PlaySfx(AudioManager.Sfx.Btn);
         _clickSetting = true;
         _clickSoundSetting = false;
@@ -166,7 +164,6 @@ public class TitleButtonManager : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("나가기 버튼을 누름");
         // DataManager.Instance.SaveGameData();
         // AudioManager.Instance.PlaySfx(AudioManager.Sfx.Btn);
         Application.Quit();
@@ -174,7 +171,6 @@ public class TitleButtonManager : MonoBehaviour
 
     public void Back()
     {
-        Debug.Log("뒤로 가기 버튼을 누름");
         // AudioManager.Instance.PlaySfx(AudioManager.Sfx.Btn);
         _clickSetting = false;
         _clickSoundSetting = false;
@@ -182,7 +178,6 @@ public class TitleButtonManager : MonoBehaviour
 
     public void SoundBack()
     {
-        Debug.Log("소리 설정 뒤로 가기 버튼을 누름");
         // AudioManager.Instance.PlaySfx(AudioManager.Sfx.Btn);
         _clickSoundSetting = false;
         _clickSetting = true;
@@ -190,7 +185,6 @@ public class TitleButtonManager : MonoBehaviour
 
     public void Sound()
     {
-        Debug.Log("소리 버튼을 누름");
         // AudioManager.Instance.PlaySfx(AudioManager.Sfx.Btn);
         _clickSoundSetting = true;
         _clickSetting = false;
@@ -198,7 +192,6 @@ public class TitleButtonManager : MonoBehaviour
 
     public void Graphic()
     {
-        Debug.Log("그래픽 버튼을 누름");
         // AudioManager.Instance.PlaySfx(AudioManager.Sfx.Btn);
     }
 }

@@ -1,20 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    /* [field: SerializeField] public GameObject Player { get; set; }
-    public static GameManager Instance;
+    private bool _isEsc = false;
+    [SerializeField] private GameObject _escUI;
 
-    private void Awake()
+    private void Update()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+        if (Input.GetKeyDown(KeyCode.Escape) && !_isEsc)
+        {
+            Time.timeScale = 0f;
+            _escUI.SetActive(true);
+            _isEsc = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && _isEsc)
+        {
+            Time.timeScale = 1f;
+            _escUI.SetActive(false);
+            _isEsc = false;
+        }
+        
+    }
 
-        DontDestroyOnLoad(this);
-    } */
+    public void EscTitleButton()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
+
+    public void EscQuitButton()
+    {
+        Application.Quit();
+    }
 }

@@ -27,12 +27,12 @@ public class Timer : MonoBehaviour
 
         _timer += Time.deltaTime;
 
-        _timerText.text = $"{_timer.ToString("F2")} Seconds";
+        _timerText.text = $"{_timer.ToString("F2")} √ ";
     }
 
     public void RestartTimer()
     {
         _timer = 0f;
-        _timerText.text = $"{_timer.ToString("F2")} Seconds";
+        _timerText.text = $"{_timer.ToString("F2")} √ ";
     }
 }

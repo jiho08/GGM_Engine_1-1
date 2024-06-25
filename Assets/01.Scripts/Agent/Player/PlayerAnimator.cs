@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private GameObject _deadUI;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private Player _player;
+    [SerializeField] private int _deadCamPriority = 11;
 
     public static PlayerAnimator Instance;
 
@@ -36,7 +37,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void OnDeadExplosion()
     {
-        _virtualCamera.Priority = 11;
+        _virtualCamera.Priority = _deadCamPriority;
         _deadUI.SetActive(true);
         PlayerMovement.Instance.ready = false;
         PlayerMovement.Instance.isDead = true;
