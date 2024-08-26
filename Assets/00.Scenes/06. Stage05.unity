@@ -8890,6 +8890,7 @@ MonoBehaviour:
   _deadUI: {fileID: 868071288990803077}
   _virtualCamera: {fileID: 2020997705}
   _player: {fileID: 3748026757551377079}
+  _deadCamPriority: 11
   _animator: {fileID: 0}
 --- !u!114 &977225147318271014
 MonoBehaviour:

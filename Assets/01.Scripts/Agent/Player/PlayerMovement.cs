@@ -149,6 +149,7 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
             Restart();
             return;
         }
+
         if (!isStart && ready && _spriteRenderer.sprite.name == "Car blue")
         {
             FirstSpaceKey();
